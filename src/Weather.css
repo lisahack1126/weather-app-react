@@ -1,0 +1,37 @@
+.Weather a {
+  margin: 20px;
+}
+
+.Weather img {
+  height: 50px;
+  width: 50px;
+}
+
+.Weather .weather-app {
+  margin: 0;
+}
+
+.Weather .city-name {
+  font-family: var(--secondary-font-family);
+  font-size: 70px;
+  margin: 0;
+}
+
+.Weather .current-weather-image {
+  width: 160px;
+  height: 160px;
+}
+
+.Weather .temperature {
+  font-size: 95px;
+}
+
+.Weather .fahrenheit {
+  font-size: 25px;
+  position: relative;
+  top: -51px;
+}
+
+.Weather .vertical-line {
+  height: 200px;
+}
