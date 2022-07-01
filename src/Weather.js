@@ -277,7 +277,11 @@ export default function Weather() {
         </div>
       </div>
       <footer>
-        <a href="https://github.com/lisahack1126/weather-app-react">
+        <a
+          href="https://github.com/lisahack1126/weather-app-react"
+          target="_blank"
+          rel="noreferrer"
+        >
           Open-source code
         </a>
         , by Lisa Wedddington
