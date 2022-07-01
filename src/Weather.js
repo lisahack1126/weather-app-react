@@ -100,6 +100,7 @@ export default function Weather() {
         </div>
         <div className="container-3">
           <span>Next 5 days</span>
+          <hr className="m-0" />
           <table className="table table-striped table-group-divider table-hover text-center">
             <tr>
               <th scope="col">
