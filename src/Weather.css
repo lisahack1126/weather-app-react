@@ -39,3 +39,10 @@
 .Weather .vertical-line {
   height: 200px;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin: 350px;
+  margin-left: 50px;
+}

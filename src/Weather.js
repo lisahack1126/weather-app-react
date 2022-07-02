@@ -298,10 +298,13 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "07d2964c500ffbfcd2b577b291d089bd";
-    let city = "Lexington";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayWeatherData);
 
-    return <Oval height="100" width="100" color="blue" ariaLabel="loading" />;
+    return (
+      <div className="loader">
+        <Oval height="100" width="100" color="blue" ariaLabel="loading" />
+      </div>
+    );
   }
 }
