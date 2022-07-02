@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import { Oval } from "react-loader-spinner";
 import "./App.css";
 import "./Weather.css";
@@ -10,8 +11,7 @@ export default function Weather(props) {
   function displayWeatherData(response) {
     setWeatherData({
       ready: true,
-      date: "Saturday, 07/02",
-      time: "12:00pm",
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       feelsLike: response.data.main.feels_like,
       wind: response.data.wind.speed,
@@ -22,7 +22,6 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       iconUrl: response.data.weather[0].icon,
     });
-    console.log(response.data);
   }
 
   if (weatherData.ready) {
@@ -34,7 +33,7 @@ export default function Weather(props) {
               <div className="col">
                 <h1 className="city-name">{weatherData.city}</h1>
                 <span className="current-date-time text-muted">
-                  {weatherData.date} {weatherData.time}
+                  <FormattedDate date={weatherData.date} />
                 </span>
               </div>
               <div className="col">
@@ -119,178 +118,180 @@ export default function Weather(props) {
             <span>Next 5 days</span>
             <hr className="m-0" />
             <table className="table table-striped table-group-divider table-hover text-center mt-2 mb-0">
-              <tr>
-                <th scope="col">
-                  {" "}
-                  Tues
-                  <br />
-                  <span className="text-muted"> 06/13 </span>
-                </th>
-                <th scope="col">
-                  {" "}
-                  <img
-                    src={weatherData.imgUrl}
-                    alt={weatherData.description}
-                    className="img-fluid"
-                  />
-                </th>
-                <th scope="col">
-                  88°
-                  <br />
-                  <span className="text-muted"> High </span>
-                </th>
-                <th scope="col">
-                  66°
-                  <br />
-                  <span className="text-muted"> Low </span>
-                </th>
-                <th scope="col">
-                  12mph
-                  <br />
-                  <span className="text-muted"> Wind </span>
-                </th>
-                <th scope="col">
-                  0%
-                  <br />
-                  <span className="text-muted"> Rain </span>
-                </th>
-              </tr>
-              <tr>
-                <th scope="col">
-                  Wed
-                  <br />
-                  <span className="text-muted"> 06/14 </span>
-                </th>
-                <th scope="col">
-                  <img
-                    src={weatherData.imgUrl}
-                    alt={weatherData.description}
-                    className="img-fluid"
-                  />
-                </th>
-                <th scope="col">
-                  86°
-                  <br />
-                  <span className="text-muted"> High </span>
-                </th>
-                <th scope="col">
-                  63°
-                  <br />
-                  <span className="text-muted"> Low </span>
-                </th>
-                <th scope="col">
-                  9mph
-                  <br />
-                  <span className="text-muted"> Wind </span>
-                </th>
-                <th scope="col">
-                  40%
-                  <br />
-                  <span className="text-muted"> Rain </span>
-                </th>
-              </tr>
-              <tr>
-                <th scope="col">
-                  Thurs
-                  <br />
-                  <span className="text-muted"> 06/15 </span>
-                </th>
-                <th scope="col">
-                  <img
-                    src={weatherData.imgUrl}
-                    alt={weatherData.description}
-                    className="img-fluid"
-                  />
-                </th>
-                <th scope="col">
-                  90°
-                  <br />
-                  <span className="text-muted"> High </span>
-                </th>
-                <th scope="col">
-                  74°
-                  <br />
-                  <span className="text-muted"> Low </span>
-                </th>
-                <th scope="col">
-                  11mph
-                  <br />
-                  <span className="text-muted"> Wind </span>
-                </th>
-                <th scope="col">
-                  3%
-                  <br />
-                  <span className="text-muted"> Rain </span>
-                </th>
-              </tr>
-              <tr>
-                <th scope="col">
-                  Fri
-                  <br />
-                  <span className="text-muted"> 06/16 </span>
-                </th>
-                <th scope="col">
-                  <img
-                    src={weatherData.imgUrl}
-                    alt={weatherData.description}
-                    className="img-fluid"
-                  />
-                </th>
-                <th scope="col">
-                  95°
-                  <br />
-                  <span className="text-muted"> High </span>
-                </th>
-                <th scope="col">
-                  75°
-                  <br />
-                  <span className="text-muted"> Low </span>
-                </th>
-                <th scope="col">
-                  3mph
-                  <br />
-                  <span className="text-muted"> Wind </span>
-                </th>
-                <th scope="col">
-                  75%
-                  <br />
-                  <span className="text-muted"> Rain </span>
-                </th>
-              </tr>
-              <tr>
-                <th scope="col">
-                  Sat
-                  <br />
-                  <span className="text-muted"> 06/17 </span>
-                </th>
-                <th scope="col">
-                  <img
-                    src={weatherData.imgUrl}
-                    alt={weatherData.description}
-                    className="img-fluid"
-                  />
-                </th>
-                <th scope="col">
-                  89°
-                  <br />
-                  <span className="text-muted"> High </span>
-                </th>
-                <th scope="col">
-                  69°
-                  <br />
-                  <span className="text-muted"> Low </span>
-                </th>
-                <th scope="col">
-                  8mph
-                  <br />
-                  <span className="text-muted"> Wind </span>
-                </th>
-                <th scope="col">
-                  2%
-                  <br />
-                  <span className="text-muted"> Rain </span>
-                </th>
-              </tr>
+              <tbody>
+                <tr>
+                  <th scope="col">
+                    {" "}
+                    Tues
+                    <br />
+                    <span className="text-muted"> 06/13 </span>
+                  </th>
+                  <th scope="col">
+                    {" "}
+                    <img
+                      src={weatherData.imgUrl}
+                      alt={weatherData.description}
+                      className="img-fluid"
+                    />
+                  </th>
+                  <th scope="col">
+                    88°
+                    <br />
+                    <span className="text-muted"> High </span>
+                  </th>
+                  <th scope="col">
+                    66°
+                    <br />
+                    <span className="text-muted"> Low </span>
+                  </th>
+                  <th scope="col">
+                    12mph
+                    <br />
+                    <span className="text-muted"> Wind </span>
+                  </th>
+                  <th scope="col">
+                    0%
+                    <br />
+                    <span className="text-muted"> Rain </span>
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col">
+                    Wed
+                    <br />
+                    <span className="text-muted"> 06/14 </span>
+                  </th>
+                  <th scope="col">
+                    <img
+                      src={weatherData.imgUrl}
+                      alt={weatherData.description}
+                      className="img-fluid"
+                    />
+                  </th>
+                  <th scope="col">
+                    86°
+                    <br />
+                    <span className="text-muted"> High </span>
+                  </th>
+                  <th scope="col">
+                    63°
+                    <br />
+                    <span className="text-muted"> Low </span>
+                  </th>
+                  <th scope="col">
+                    9mph
+                    <br />
+                    <span className="text-muted"> Wind </span>
+                  </th>
+                  <th scope="col">
+                    40%
+                    <br />
+                    <span className="text-muted"> Rain </span>
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col">
+                    Thurs
+                    <br />
+                    <span className="text-muted"> 06/15 </span>
+                  </th>
+                  <th scope="col">
+                    <img
+                      src={weatherData.imgUrl}
+                      alt={weatherData.description}
+                      className="img-fluid"
+                    />
+                  </th>
+                  <th scope="col">
+                    90°
+                    <br />
+                    <span className="text-muted"> High </span>
+                  </th>
+                  <th scope="col">
+                    74°
+                    <br />
+                    <span className="text-muted"> Low </span>
+                  </th>
+                  <th scope="col">
+                    11mph
+                    <br />
+                    <span className="text-muted"> Wind </span>
+                  </th>
+                  <th scope="col">
+                    3%
+                    <br />
+                    <span className="text-muted"> Rain </span>
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col">
+                    Fri
+                    <br />
+                    <span className="text-muted"> 06/16 </span>
+                  </th>
+                  <th scope="col">
+                    <img
+                      src={weatherData.imgUrl}
+                      alt={weatherData.description}
+                      className="img-fluid"
+                    />
+                  </th>
+                  <th scope="col">
+                    95°
+                    <br />
+                    <span className="text-muted"> High </span>
+                  </th>
+                  <th scope="col">
+                    75°
+                    <br />
+                    <span className="text-muted"> Low </span>
+                  </th>
+                  <th scope="col">
+                    3mph
+                    <br />
+                    <span className="text-muted"> Wind </span>
+                  </th>
+                  <th scope="col">
+                    75%
+                    <br />
+                    <span className="text-muted"> Rain </span>
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col">
+                    Sat
+                    <br />
+                    <span className="text-muted"> 06/17 </span>
+                  </th>
+                  <th scope="col">
+                    <img
+                      src={weatherData.imgUrl}
+                      alt={weatherData.description}
+                      className="img-fluid"
+                    />
+                  </th>
+                  <th scope="col">
+                    89°
+                    <br />
+                    <span className="text-muted"> High </span>
+                  </th>
+                  <th scope="col">
+                    69°
+                    <br />
+                    <span className="text-muted"> Low </span>
+                  </th>
+                  <th scope="col">
+                    8mph
+                    <br />
+                    <span className="text-muted"> Wind </span>
+                  </th>
+                  <th scope="col">
+                    2%
+                    <br />
+                    <span className="text-muted"> Rain </span>
+                  </th>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
