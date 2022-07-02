@@ -14,7 +14,7 @@ export default function Weather() {
   };
 
   return (
-    <div className="App m-5">
+    <div className="App mt-5 mb-0">
       <div className="Weather border border-3 border-primary rounded p-4">
         <div className="container-1 ps-4">
           <div className="row">
@@ -30,13 +30,13 @@ export default function Weather() {
                   <input
                     type="search"
                     placeholder="Search a city..."
-                    autocomplete="off"
-                    autofocus="on"
-                    className="w-75 p-1 me-1 rounded"
+                    autoComplete="off"
+                    autoFocus="on"
+                    className="w-60 p-1 me-1 rounded"
                   />
                   <input
                     type="submit"
-                    className="btn btn-primary p-2"
+                    className="btn btn-primary mb-1"
                     value="Search 🔍"
                   />
                 </form>
@@ -101,7 +101,7 @@ export default function Weather() {
         <div className="container-3">
           <span>Next 5 days</span>
           <hr className="m-0" />
-          <table className="table table-striped table-group-divider table-hover text-center">
+          <table className="table table-striped table-group-divider table-hover text-center mt-2 mb-0">
             <tr>
               <th scope="col">
                 {" "}

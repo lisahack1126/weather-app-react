@@ -1,3 +1,7 @@
+.Weather {
+  max-width: 900px;
+}
+
 .Weather a {
   margin: 20px;
 }
