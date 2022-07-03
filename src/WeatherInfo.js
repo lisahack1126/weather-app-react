@@ -6,11 +6,7 @@ export default function WeatherInfo(props) {
       <div className="container-2 text-center mt-5 mb-4">
         <div className="row">
           <div className="col">
-            <img
-              src={props.data.iconUrl}
-              alt={props.data.description}
-              className="img-fluid current-weather-image"
-            />
+            <img src={props.data.iconUrl} alt={props.data.description} />
           </div>
           <div className="col">
             <span className="temperature">

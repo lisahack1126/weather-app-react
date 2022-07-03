@@ -22,8 +22,9 @@ export default function Weather(props) {
       highTemperature: response.data.main.temp_max,
       lowTemperature: response.data.main.temp_min,
       humidity: response.data.main.humidity,
-      iconUrl: response.data.weather[0].icon,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
+    console.log(response.data);
   }
 
   function search() {
