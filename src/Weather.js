@@ -49,7 +49,7 @@ export default function Weather(props) {
     return (
       <div className="App m-5">
         <div className="Weather border border-3 border-primary rounded p-3">
-          <div className="container-1 ps-4">
+          <div className="container-1 ps-3">
             <div className="row">
               <div className="col">
                 <h1 className="city-name">{weatherData.city}</h1>
