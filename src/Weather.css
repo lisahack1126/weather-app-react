@@ -7,11 +7,6 @@
   margin: 20px;
 }
 
-.Weather img {
-  height: 150px;
-  width: 150px;
-}
-
 .Weather .city-name {
   font-family: var(--secondary-font-family);
   font-size: 70px;

@@ -1,12 +1,17 @@
 import React from "react";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <div className="container-2 text-center mt-5 mb-4">
+      <div className="container-2 text-center mt-3 mb-0">
         <div className="row">
           <div className="col">
-            <img src={props.data.iconUrl} alt={props.data.description} />
+            <img
+              src={props.data.iconUrl}
+              alt={props.data.description}
+              className="img-fluid"
+            />
           </div>
           <div className="col">
             <span className="temperature">
@@ -19,7 +24,7 @@ export default function WeatherInfo(props) {
             </span>
           </div>
           <div className="vr p-0 vertical-line"></div>
-          <div className="col">
+          <div className="col pe-4">
             <div className="row mt-4 mb-3">
               <div className="col">
                 {Math.round(props.data.highTemperature)}°F

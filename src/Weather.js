@@ -7,6 +7,7 @@ import { Oval } from "react-loader-spinner";
 import "./App.css";
 import "./Weather.css";
 import "./WeatherForecast.css";
+import "./WeatherInfo.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
