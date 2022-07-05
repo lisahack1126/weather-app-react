@@ -28,6 +28,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
     });
+    console.log(response.data);
   }
 
   function search() {
