@@ -16,6 +16,7 @@ export default function Weather(props) {
   function displayWeatherData(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       feelsLike: response.data.main.feels_like,
@@ -25,9 +26,8 @@ export default function Weather(props) {
       highTemperature: response.data.main.temp_max,
       lowTemperature: response.data.main.temp_min,
       humidity: response.data.main.humidity,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
-    console.log(response.data);
   }
 
   function search() {
@@ -78,8 +78,11 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
-          <WeatherInfo data={weatherData} size={48} />
-          <WeatherForecast data={weatherData} />
+          <WeatherInfo data={weatherData} size={150} />
+          <WeatherForecast
+            data={weatherData}
+            coordinates={weatherData.coordinates}
+          />
         </div>
       </div>
     );
