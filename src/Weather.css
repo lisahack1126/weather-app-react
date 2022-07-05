@@ -1,5 +1,6 @@
 .Weather {
-  max-width: 900px;
+  margin: 0;
+  max-width: 100%;
 }
 
 .Weather a {
@@ -9,10 +10,6 @@
 .Weather img {
   height: 150px;
   width: 150px;
-}
-
-.Weather .weather-app {
-  margin: 0;
 }
 
 .Weather .city-name {
