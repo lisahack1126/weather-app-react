@@ -5,15 +5,11 @@ import "./WeatherInfo.css";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <div className="container-2 text-center mt-3 mb-0">
+      <div className="container-2 text-center mt-4 mb-0">
         <div className="row">
           <div className="col">
             <div className="float-left">
-              <WeatherIcon
-                code={props.data.icon}
-                alt={props.data.description}
-                size={props.size}
-              />
+              <WeatherIcon code={props.data.icon} size={props.size} />
             </div>
           </div>
           <div className="col">

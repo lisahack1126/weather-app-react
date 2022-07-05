@@ -11,23 +11,33 @@ export default function WeatherForecast(props) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
-  console.log(forecast);
 
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <div className="container-3">
-          <hr className="m-0" />
+        <div className="container-3 mt-5">
           <div className="row mt-2">
             <div className="col">
               <WeatherForecastDay data={forecast[0]} />
+            </div>
+            <div className="col">
+              <WeatherForecastDay data={forecast[1]} />
+            </div>
+            <div className="col">
+              <WeatherForecastDay data={forecast[2]} />
+            </div>
+            <div className="col">
+              <WeatherForecastDay data={forecast[3]} />
+            </div>
+            <div className="col">
+              <WeatherForecastDay data={forecast[4]} />
             </div>
           </div>
         </div>
       </div>
     );
   } else {
-    let apiKey = "07d2964c500ffbfcd2b577b291d089bd";
+    let apiKey = "15b1a85709be0e6e9bce2b6a7ed7f23c";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
