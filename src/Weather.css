@@ -13,11 +13,6 @@
   margin: 0;
 }
 
-.Weather .current-weather-image {
-  width: 160px;
-  height: 160px;
-}
-
 .Weather .temperature {
   font-size: 95px;
 }

@@ -1,4 +1,7 @@
-.WeatherForecast img {
-  height: 100px;
-  width: 100px;
+.WeatherForecast {
+  text-align: center;
+}
+
+.WeatherForecast-temp-min {
+  margin-left: 10px;
 }
