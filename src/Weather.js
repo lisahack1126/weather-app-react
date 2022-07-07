@@ -47,27 +47,28 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="App m-5">
+      <div className="App">
         <div className="Weather border border-3 border-primary rounded p-3">
           <div className="container-1 ps-3">
             <div className="row">
-              <div className="col-sm-6 city-date">
+              <div className="col city-date">
                 <h1 className="city-name">{weatherData.city}</h1>
                 <span className="current-date-time text-muted">
                   <FormattedDate date={weatherData.date} />
                 </span>
               </div>
-              <span className="search-engine col-sm-6 p-3">
+              <span className="search-engine col p-3">
                 <form action="" onSubmit={handleSubmit}>
                   <input
                     type="search"
                     placeholder="Search a city..."
                     autoComplete="off"
                     autoFocus="on"
-                    className="rounded search-bar form-control form-control-lg m-0"
+                    className="rounded form-control form-control-lg m-0"
+                    id="search-bar"
                     onChange={handleCityChange}
                   />
-                  <span>
+                  <span className="search-button">
                     <button className="btn btn-primary m-1 p-2" type="submit">
                       Search 🔍
                     </button>

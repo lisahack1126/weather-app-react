@@ -42,7 +42,7 @@
   margin-left: 250px;
 }
 
-@media (max-width: 570px) {
+@media (max-width: 775px) {
   .WeatherInfo .vr {
     display: none;
   }
@@ -51,14 +51,9 @@
     display: none;
   }
 
-  .Weather .city-date {
-    padding: 0px;
-  }
-
   .Weather .city-name {
     font-size: 50px;
     text-align: center;
-    padding-right: 0px;
   }
 
   .Weather .current-date-time {
@@ -66,7 +61,19 @@
     text-align: center;
   }
 
+  .Weather .search-button {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .WeatherInfo .container-2 {
+    padding: 0;
+    margin-top: 0;
+    font-size: 20px;
+  }
+
   .Weather form {
-    width: auto;
+    display: block;
+    text-align: center;
   }
 }

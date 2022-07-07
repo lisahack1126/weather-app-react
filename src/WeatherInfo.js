@@ -23,8 +23,8 @@ export default function WeatherInfo(props) {
             </span>
           </div>
           <div className="vr p-0 vertical-line"></div>
-          <div className="col-sm pe-4">
-            <div className="row mt-4 mb-3">
+          <div className="col-sm pe-4 ">
+            <div className="row mt-4 mb-3 ">
               <div className="col-sm">
                 {Math.round(props.data.highTemperature)}°F
                 <br />
