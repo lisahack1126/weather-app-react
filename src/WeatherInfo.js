@@ -12,7 +12,7 @@ export default function WeatherInfo(props) {
               <WeatherIcon code={props.data.icon} size={props.size} />
             </div>
           </div>
-          <div className="col-sm">
+          <div className="col-sm current-temp-conditions">
             <span className="temperature">
               {Math.round(props.data.temperature)}
             </span>

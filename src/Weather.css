@@ -80,4 +80,8 @@
     text-align: center;
     width: auto;
   }
+
+  .WeatherInfo .current-temp-conditions {
+    margin-top: 20px;
+  }
 }
