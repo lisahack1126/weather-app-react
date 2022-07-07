@@ -1,0 +1,5 @@
+.main-weather-icon canvas {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}

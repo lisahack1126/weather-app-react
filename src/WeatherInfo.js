@@ -8,7 +8,7 @@ export default function WeatherInfo(props) {
       <div className="container-2 text-center mt-3 mb-0">
         <div className="row">
           <div className="col">
-            <div className="float-left">
+            <div className="float-left main-weather-icon">
               <WeatherIcon code={props.data.icon} size={props.size} />
             </div>
           </div>
@@ -31,26 +31,21 @@ export default function WeatherInfo(props) {
                 <span className="text-muted"> High </span>
               </div>
               <div className="col">
-                {Math.round(props.data.wind)}mph
-                <br />
-                <span className="text-muted"> Wind </span>
-              </div>
-              <div className="col">
-                {Math.round(props.data.feelsLike)}°F
-                <br />
-                <span className="text-muted"> Feels Like </span>
-              </div>
-            </div>
-            <div className="row ps-2">
-              <div className="col">
                 {Math.round(props.data.lowTemperature)}°F
                 <br />
                 <span className="text-muted"> Low </span>
               </div>
               <div className="col">
-                0%
+                {Math.round(props.data.wind)}mph
                 <br />
-                <span className="text-muted"> Rain </span>
+                <span className="text-muted"> Wind </span>
+              </div>
+            </div>
+            <div className="row ps-2">
+              <div className="col">
+                {Math.round(props.data.feelsLike)}°F
+                <br />
+                <span className="text-muted"> Feels Like </span>
               </div>
               <div className="col">
                 {props.data.humidity}%
