@@ -3,6 +3,14 @@
   max-width: 100%;
 }
 
+.Weather .search-bar {
+  width: auto;
+}
+
+.Weather form {
+  display: flex;
+}
+
 .Weather a {
   margin: 20px;
 }
@@ -32,4 +40,33 @@
   justify-content: center;
   margin: 350px;
   margin-left: 250px;
+}
+
+@media (max-width: 570px) {
+  .WeatherInfo .vr {
+    display: none;
+  }
+
+  .WeatherInfo .main-weather-icon {
+    display: none;
+  }
+
+  .Weather .city-date {
+    padding: 0px;
+  }
+
+  .Weather .city-name {
+    font-size: 50px;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .Weather .current-date-time {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .Weather form {
+    width: auto;
+  }
 }

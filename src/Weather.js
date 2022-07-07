@@ -28,7 +28,6 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
     });
-    console.log(response.data);
   }
 
   function search() {
@@ -52,31 +51,29 @@ export default function Weather(props) {
         <div className="Weather border border-3 border-primary rounded p-3">
           <div className="container-1 ps-3">
             <div className="row">
-              <div className="col">
+              <div className="col-sm-6 city-date">
                 <h1 className="city-name">{weatherData.city}</h1>
                 <span className="current-date-time text-muted">
                   <FormattedDate date={weatherData.date} />
                 </span>
               </div>
-              <div className="col">
-                <div className="search-engine p-2">
-                  <form action="" onSubmit={handleSubmit}>
-                    <input
-                      type="search"
-                      placeholder="Search a city..."
-                      autoComplete="off"
-                      autoFocus="on"
-                      className="w-60 p-1 me-1 rounded"
-                      onChange={handleCityChange}
-                    />
-                    <input
-                      type="submit"
-                      className="btn btn-primary mb-1"
-                      value="Search 🔍"
-                    />
-                  </form>
-                </div>
-              </div>
+              <span className="search-engine col-sm-6 p-3">
+                <form action="" onSubmit={handleSubmit}>
+                  <input
+                    type="search"
+                    placeholder="Search a city..."
+                    autoComplete="off"
+                    autoFocus="on"
+                    className="rounded search-bar form-control form-control-lg m-0"
+                    onChange={handleCityChange}
+                  />
+                  <span>
+                    <button className="btn btn-primary m-1 p-2" type="submit">
+                      Search 🔍
+                    </button>
+                  </span>
+                </form>
+              </span>
             </div>
           </div>
           <WeatherInfo data={weatherData} size={150} />

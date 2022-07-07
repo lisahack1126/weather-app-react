@@ -14,3 +14,12 @@ font-family: 'Poppins', sans-serif;
   font-size: 22px;
   max-width: 950px;
 }
+
+@media (max-width: 576px) {
+  .main-weather-icon canvas {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: red;
+  }
+}
