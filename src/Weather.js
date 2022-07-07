@@ -65,7 +65,6 @@ export default function Weather(props) {
                     autoComplete="off"
                     autoFocus="on"
                     className="rounded form-control form-control-lg m-0"
-                    id="search-bar"
                     onChange={handleCityChange}
                   />
                   <span className="search-button">
